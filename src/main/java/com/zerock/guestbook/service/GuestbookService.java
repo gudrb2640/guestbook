@@ -9,6 +9,10 @@ public interface GuestbookService {
 
     Long register(GuestbookDTO dto);
 
+    GuestbookDTO read(Long gno);
+    void remove(long gno);
+    void modify(GuestbookDTO dto);
+
     PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO);
 
     default Guestbook dtoToEntity(GuestbookDTO dto) {
@@ -34,4 +38,6 @@ public interface GuestbookService {
 
         return dto;
     }
+
+
 }
